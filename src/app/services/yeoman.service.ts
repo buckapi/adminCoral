@@ -50,7 +50,7 @@ export class Yeoman {
       GQLUrl: string;
     } = {
       name: "default",
-      restUrl: "https://db.buckapi.com:9032",
+      restUrl: "https://db.buckapi.com:7056",
       GQLUrl: "<origin GQL url>",
     };
     constructor() {}

@@ -7,13 +7,13 @@ const routes: Routes = [
   
   { path: 'login', loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule) },
   
-  { path: 'servAdd', loadChildren: () => import('./components/services/addcategory/addcategory.module').then(m => m.AddcategoryModule) },
+  { path: 'servAdd', loadChildren: () => import('./components/categories/addcategory/addcategory.module').then(m => m.AddcategoryModule) },
 
-  { path: 'servAll', loadChildren: () => import('./components/services/allcategory/allcategory.module').then(m => m.AllcategoryModule) },
+  { path: 'servAll', loadChildren: () => import('./components/categories/allcategory/allcategory.module').then(m => m.AllcategoryModule) },
 
-  { path: 'servDetail', loadChildren: () => import('./components/services/detailcategory/detailcategory.module').then(m => m.DetailcategoryModule) },
+  { path: 'servDetail', loadChildren: () => import('./components/categories/detailcategory/detailcategory.module').then(m => m.DetailcategoryModule) },
 
-  { path: 'servEdit', loadChildren: () => import('./components/services/editcategory/editcategory.module').then(m => m.EditcategoryModule) },
+  { path: 'servEdit', loadChildren: () => import('./components/categories/editcategory/editcategory.module').then(m => m.EditcategoryModule) },
 
   { path: 'proAdd', loadChildren: () => import('./components/products/addcliente/addcliente.module').then(m => m.AddclienteModule) },
 
