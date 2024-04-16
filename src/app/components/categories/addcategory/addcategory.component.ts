@@ -39,13 +39,7 @@ export class AddcategoryComponent implements AfterViewInit {
   data = {
     images: [] as string[], // o cualquier otro tipo de dato adecuado, como any[]
     name: '',
-    subname: '',
-    description1: '',
-    description2: '',
-    description3: '',
-    ref: '',
-    itemServices: [{item:'' }]
-  /*   package:'' */
+    ref: ''
   };
  
   adapter = new  DemoFilePickerAdapter(this.http,this._butler);
@@ -53,7 +47,8 @@ export class AddcategoryComponent implements AfterViewInit {
     public router:Router,
     public http:HttpClient,
     public _butler:Butler,
-    public dataApiService:DataApiService
+    public dataApiService:DataApiService,
+    public yeoman:Yeoman
     ) { 
       this._butler.data=this.data;}
       onSubmit() {
@@ -67,7 +62,7 @@ export class AddcategoryComponent implements AfterViewInit {
           Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Guardado',
+            title: 'Categoria Guardada',
             showConfirmButton: false,
             timer: 1500
           })
@@ -78,9 +73,7 @@ export class AddcategoryComponent implements AfterViewInit {
         console.log(this.data);
         
         }
-        addItemService() {
-          this.data.itemServices.push({item:''});
-        }
+        
     ngAfterViewInit(): void {
   }
 

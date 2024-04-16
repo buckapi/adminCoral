@@ -44,9 +44,9 @@
                             <div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                     <div role="tabpanel" class="tab-pane fade show " [class.active]="i == 0" id="{{i}}" *ngFor="let image of yeoman.preview.images;let i =index;">
+                                     <div role="tabpanel" class="tab-pane fade show " [class.active]="i == 0" id="{{i}}" *ngFor="let img of yeoman.preview.images;let i =index;">
                                         <img class="img-fluid" src="assets/gymove/images/product/1.jpg" alt="" *ngIf="yeoman.preview.images[0]===undefined">
-                                        <img class="img-fluid" src="{{image}}" alt="" *ngIf="image!==undefined">
+                                        <img class="img-fluid" src="{{img}}" alt="" *ngIf="img!==undefined">
                                     </div> 
                                 </div>
                             </div>
@@ -57,18 +57,7 @@
                                     <div class="new-arrival-content pr">
                                         <h2>{{yeoman.preview.name}}</h2>
                                     </div>
-                                    <div class="new-arrival-content pr">
-                                        <h3>{{yeoman.preview.subname}}</h3>
-                                    </div>
-                                    <div class="new-arrival-content pr">
-                                        <p>{{yeoman.preview.description1}}</p>
-                                    </div>
-                                    <div class="new-arrival-content pr">
-                                        <p>{{yeoman.preview.description2}}</p>
-                                    </div>
-                                    <div class="new-arrival-content pr">
-                                        <p>{{yeoman.preview.description3}}</p>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

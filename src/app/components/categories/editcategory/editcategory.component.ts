@@ -34,13 +34,7 @@ export class EditcategoryComponent implements OnInit {
   data = {
     images: [] as string[], // o cualquier otro tipo de dato adecuado, como any[]
     name: '',
-    subname: '',
-    description1: '',
-    description2: '',
-    description3: '',
-    ref: '',
-    itemServices: [{item:'' }]
-
+    ref: ''
   };
  
   adapter = new  DemoFilePickerAdapter(this.http,this._butler);
@@ -59,6 +53,7 @@ export class EditcategoryComponent implements OnInit {
       this.router.navigate(['/servAll']);
     }
       onSubmit() {
+        let currentImages = this.yeoman.preview.images;
         if (this._butler.uploaderImages.length > 0) {
           this.data.images = this._butler.uploaderImages;
            }
@@ -68,12 +63,7 @@ export class EditcategoryComponent implements OnInit {
                this.data = {
                 images: [] as string[], // o cualquier otro tipo de dato adecuado, como any[]
                 name: '',
-                subname: '',
-                description1: '',
-                description2: '',
-                description3: '',
-                ref: '',
-                itemServices: [{item:'' }]
+                ref: ''
                };
                this._butler.uploaderImages = [];
                Swal.fire({
