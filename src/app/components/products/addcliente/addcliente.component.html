@@ -28,7 +28,17 @@
                                     </div>
                                   </div>
                                 <div class="col-md-8">
-                                
+                                    <div class="">
+                                        <div class="form-group">
+                                            <label for="event-description">Categoria</label>
+                                            
+                                            <select id="category" class="form-control wide my-custom-select" [(ngModel)]="category" (ngModelChange)="setCategory(category)" [ngModelOptions]="{standalone: true}">
+                                                <option *ngFor="let category of yeoman.allcategory, let i = index " [ngValue]="i"> 
+                                                    <span   style="cursor:pointer;">{{category.name}}</span>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 <div class="">
                                     <div class="form-group">
                                         <label for="event-name">Nombre del producto</label>
@@ -37,36 +47,42 @@
                                 </div>
                                 <div class="">
                                     <div class="form-group">
-                                        <label for="event-name">Tamaños</label>
-                                        <input  class="form-control" placeholder="medidas"type="text" [(ngModel)]="data.size" name="name" required  [ngModelOptions]="{standalone: true}">
+                                        <label for="event-name">Color</label>
+                                        <div *ngFor="let color of colors">
+                                            <input type="radio" name="color" [(ngModel)]="selectedColor" [value]="color"> {{ color }}
+                                        </div>
                                     </div>
                                 </div>
+                                
+                                <div class="">
+                                    <div class="form-group">
+                                        <label for="event-name">Talla</label>
+                                        <div *ngFor="let size of sizes">
+                                            <input type="radio" name="size" [(ngModel)]="selectedSize" [value]="size"> {{ size }}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                               
                                 <div class="">
                                     <div class="form-group">
                                         <label for="event-name">Descripción</label>
                                         <input  class="form-control" placeholder="Descripción" type="text" [(ngModel)]="data.description" name="name" required  [ngModelOptions]="{standalone: true}">
                                     </div>
                                 </div>
-                               <!--  <div class="">
+                                <div class="">
                                     <div class="form-group">
                                         <label for="event-name">Precio</label>
-                                        <input  class="form-control" placeholder="Descripción" type="text" [(ngModel)]="data.price" name="name" required  [ngModelOptions]="{standalone: true}">
+                                        <input  class="form-control" placeholder="precio" type="text" [(ngModel)]="data.price" name="name" required  [ngModelOptions]="{standalone: true}">
                                     </div>
-                                </div> -->
-                                <!-- <div class="">
-                                    <div class="">
+                                </div>
+                                <div class="">
                                     <div class="form-group">
-                                        <label for="event-description">Servicio</label>
-                                        
-                                        <select id="category" class="form-control wide my-custom-select" [(ngModel)]="category" (ngModelChange)="setCategory(category)" [ngModelOptions]="{standalone: true}">
-                                            <option *ngFor="let category of yeoman.allcategory, let i = index " [ngValue]="i"> 
-                                                <span   style="cursor:pointer;">{{category.name}}</span>
-                                            </option>
-                                        </select>
+                                        <label for="event-name">Unidades</label>
+                                        <input  class="form-control" placeholder="unidades disponibles" type="text" [(ngModel)]="data.stock" name="name" required  [ngModelOptions]="{standalone: true}">
                                     </div>
-                                    </div>
-                                </div> -->
-
+                                </div>
+                             
                                 </div>
                             </div>
                             <div class="popup-box-actions medium void text-right">

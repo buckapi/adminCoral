@@ -18,6 +18,11 @@ export class AddclienteComponent implements AfterViewInit {
   category='Seleccione una';
   categorySeted:boolean=false;
   products:any={};
+  colors: string[] = ['Rojo', 'Azul', 'Verde', 'Amarillo', 'Blanco', 'Negro'];
+  sizes: string[] = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  selectedColor: string;
+  selectedSize: string;
+
 
   public captions: UploaderCaptions = {
     dropzone: {
@@ -38,10 +43,12 @@ export class AddclienteComponent implements AfterViewInit {
     images: [] as string[], // o cualquier otro tipo de dato adecuado, como any[]
     name: '',
     size:'',
+    color:'',
     description:'',
-   /*  price:'', */
+    price:'',
     ref: '',
      idCategory: '',
+     stock:'',
   };
 
   adapter = new  DemoFilePickerAdapter(this.http,this._butler);
@@ -54,6 +61,9 @@ export class AddclienteComponent implements AfterViewInit {
     ) { 
       this.getAllCategories();
       this._butler.data=this.data;
+      this.selectedColor = '';
+      this.selectedSize = '';
+      
     }
       
       onSubmit() {
@@ -97,6 +107,7 @@ export class AddclienteComponent implements AfterViewInit {
           console.log("id: "+JSON.stringify(this.data.idCategory));
           }
           }
+         
           
     ngAfterViewInit(): void {
   }
